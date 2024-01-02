@@ -1,31 +1,31 @@
-/* Apply a baby blue background color to the body of both pages */
+/* Apply blue background color to the body*/
 body {
-    background-color: #a2cffe; /* Baby blue background color */
+    background-color: #a2cffe; 
     text-align: center; /* Center-align text */
-    font-size: 24px; /* Set a relatively large font size */
+    font-size: 24px; 
 }
 
 /* Style the <h1> elements */
 h1 {
-    font-size: 36px; /* Increase font size for headings */
-    margin: 20px 0; /* Add some margin to the top and bottom of headings */
+    font-size: 36px; /*Heading font size*/
+    margin: 20px 0; /* Margin to top and bottom of headings */
     text-align: center; /* Center-align text */
 }
 
-/* Style the buttons on the index.html page */
+/* Style buttons */
 button {
-    background-color: #ffd9e3; /* Light pink background color */
-    color: #000; /* Text color */
-    padding: 15px 30px; /* Add padding to the buttons */
-    font-size: 24px; /* Increase font size for buttons */
-    border: none; /* Remove the border */
-    cursor: pointer; /* Change cursor on hover */
-    margin: 10px; /* Add margin around the buttons */
+    background-color: #ffd9e3; 
+    color: #000; /* For text */
+    padding: 15px 30px; 
+    font-size: 24px; 
+    border: none; 
+    cursor: pointer; /* Change cursor when you hover */
+    margin: 10px; /*Margin around the buttons */
 }
 
-/* Style the hyperlink in done.html */
+/* Style hyperlink */
 p a {
-    text-decoration: none; /* Remove underline from the hyperlink */
-    color: #810c5e; /* Text color for the hyperlink */
-    font-size: 24px; /* Font size for the hyperlink */
+    text-decoration: none; /* Remove underline*/
+    color: #810c5e; /*Hyperlink colour*/
+    font-size: 24px; 
 }

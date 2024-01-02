@@ -1,4 +1,4 @@
-/* Apply a pale baby pink background color to the body */
+/* Apply pink background color to body */
 
 * {
     margin: 0;
@@ -7,59 +7,59 @@
 }
 
 body {
-    background-color: #ffd9e3; /* You can adjust the color code as needed */
-    text-align: center; /* Center-align text */
+    background-color: #ffd9e3; 
+    text-align: center; 
 }
 
-/* Style the <p> elements */
+/* Style <p> elements */
 p {
-    font-size: 24px; /* Increase font size */
-    font-weight: bold; /* Make the text bold */
+    font-size: 24px; 
+    font-weight: bold; 
 }
 
-/* Style the input field */
+/* Style input field */
 input[type="number"] {
-    width: 100px; /* Adjust the width of the input field */
-    padding: 10px; /* Add padding for better appearance */
-    font-size: 18px; /* Increase font size */
+    width: 100px; 
+    padding: 10px; 
+    font-size: 18px; 
 }
 
-/* Style the button */
+/* Style button */
 button {
-    background-color: #a2cffe; /* Button background color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Add padding to the button */
-    font-size: 18px; /* Increase font size */
-    border: none; /* Remove the border */
-    cursor: pointer; /* Change cursor on hover */
+    background-color: #a2cffe; 
+    color: white; 
+    padding: 10px 20px; 
+    font-size: 18px; 
+    border: none; 
+    cursor: pointer; 
 }
 
-/* Style the container div */
+/* Style container div */
 #cellContainer p {
-    text-align: center; /* Center-align text in the container */
-    margin: 0; /* Add some top margin to the container */
+    text-align: center; 
+    margin: 0; /* top margin*/
 }
 
 /* Style the images */
 img#cellImage {
-    display: block; /* Make the image a block element for centering */
-    margin: 20px auto; /* 20px margin on top and bottom, centered horizontally */
-    max-width: 100%; /* Ensure images don't exceed their container */
+    display: block; /* Make image a block element for centering */
+    margin: 20px auto; 
+    max-width: 100%; /* Inages cannot exceed container */
     height: auto; /* Maintain aspect ratio for images */
-    width: 700px; /* Set a specific width for all images (adjust as needed) */
-    max-height: 700px; /* Set a specific max height for all images (adjust as needed) */
+    width: 700px; 
+    max-height: 700px; 
 }
 
 #back-to-main-button-container {
-    position: fixed; /* Position is fixed, so it stays in place when you scroll */
-    bottom: 10px; /* Adjust this value to control the vertical position */
-    left: 10px; /* Adjust this value to control the horizontal position */
+    position: fixed; /* Position is fixed, stays in place when scrolled */
+    bottom: 10px; /* Control the vertical position */
+    left: 10px; /* Control the horizontal position */
 }
 
 #next-button-container {
-    position: fixed; /*Position is fixed, so it stays in place when you scroll */
-    bottom: 10px; /* Adjust this value to control the vertical position */
-    right: 10px; /* Adjust this value to control the horizontal position */
+    position: fixed; /*Position is fixed, stays in place when scrolled */
+    bottom: 10px; /* Control the vertical position */
+    right: 10px; /* Control the horizontal position */
 }
 
 

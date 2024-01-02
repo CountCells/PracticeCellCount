@@ -142,9 +142,10 @@
 
         function nextScreen() {
             if (liveCellGuess && deadCellGuess && cellViabilityGuess && cellDensityGuess) {
-                currentAnswerIndex++;
+                currentAnswerIndex++; //check if all blanks are filled
+                //reset all inputs
                 liveCellGuess = false;
-                document.getElementById("calcLive").value = "";
+                document.getElementById("calcLive").value = ""; 
                 deadCellGuess = false;
                 document.getElementById("calcDead").value = "";
                 cellViabilityGuess = false;
@@ -177,7 +178,7 @@
     setTimeout(function () {
         button.style.backgroundColor = "#a2cffe";
         button.innerText = "Check Answer";
-    }, 50); // You can adjust the delay (in milliseconds) as needed
+    }, 50); // to adjust delay
     }
     </script>
         <div id="back-to-main-button-container">
