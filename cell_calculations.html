@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculations Practice</title>
+    <link rel="stylesheet" type="text/css" href="cell_styles.css">
+</head>
+<body>
+    <h2 id="question-heading">Question 1</h2>
+    <img id="cellImage" alt="Cell Image">
+    <p>Number of Live Cells: </p>
+    <input type="number" id="calcLive">
+    <button id="liveCellsCheck" onclick="calcLive()">Check Answer</button>
+    <p>Number of Dead Cells: </p>
+    <input type="number" id="calcDead">
+    <button id="deadCellsCheck" onclick="calcDead()">Check Answer</button>
+    <p>Cell Viability (%): </p>
+    <input type="number" id="cellViability">
+    <button id="cellViabilityCheck" onclick="calcViability()">Check Answer</button>
+    <p>Cell Density (cells/mL): </p>
+    <input type="number" id="cellDensity">
+    <button id="cellDensityCheck" onclick="calcDensity()">Check Answer</button>
+
+    <script>
+        let currentQuestionNumber = 1;
+
+        let liveCells = [42, 49, 43, 36, 43, 51, 39, 43, 42, 45, 41, 43, 41, 37, 48];
+        let deadCells = [12, 11, 11, 12, 11, 5, 12, 12, 15, 14, 11, 17, 12, 17, 9];
+        let liveCellGuess = false;
+        let deadCellGuess = false;
+        let cellViabilityGuess = false;
+        let cellDensityGuess = false;
+
+        let currentAnswerIndex = 0;
+        let currentLiveCellIndex = 0;
+        let currentDeadCellIndex = 0;
+        let currentImageIndex = 0;
+
+        let cellInfo = [
+            { image: 'images/image1.png', count: 1 },
+            { image: 'images/image2.png', count: 2 },
+            { image: 'images/image3.png', count: 3 },
+            { image: 'images/image4.png', count: 4 },
+            { image: 'images/image5.png', count: 5 },
+            { image: 'images/image6.png', count: 6 },
+            { image: 'images/image7.png', count: 7 },
+            { image: 'images/image8.png', count: 8 },
+            { image: 'images/image9.png', count: 9 },
+            { image: 'images/image10.png', count: 10 },
+            { image: 'images/image11.png', count: 11 },
+            { image: 'images/image12.png', count: 12 },
+            { image: 'images/image13.png', count: 13 },
+            { image: 'images/image14.png', count: 14 },
+            { image: 'images/image15.png', count: 15 },
+            // Add more image-count pairs as needed
+    ];
+
+    function updateQuestionHeading(){
+        document.getElementById("question-heading").textContent = "Question "+currentQuestionNumber+": ";
+    }
+    
+    updateQuestionHeading();
+    displayCurrentCell();
+
+        const liveCellsCheck = document.getElementById("liveCellsCheck");
+        const deadCellsCheck = document.getElementById("deadCellsCheck");
+        const cellViabilityCheck = document.getElementById("cellViabilityCheck");
+        const cellDensityCheck = document.getElementById("cellDensityCheck");
+
+        function displayCurrentCell() {
+            const currentCell = cellInfo[currentImageIndex];
+            document.getElementById("cellImage").src = currentCell.image;
+        }
+
+        function calcLive() {
+            const userLive = parseInt(document.getElementById("calcLive").value);
+            //checkForEnd();
+            if (userLive === liveCells[currentLiveCellIndex]) {
+                liveCellsCheck.style.backgroundColor = "green";
+                liveCellsCheck.innerText = "Correct!";
+                liveCellGuess = true;
+                displayCurrentCell();
+            } else {
+                liveCellsCheck.style.backgroundColor = "red";
+                liveCellsCheck.innerText = "Incorrect!";
+            }
+            //nextScreen();
+        }
+
+        function calcDead() {
+            const userDead = parseInt(document.getElementById("calcDead").value);
+            //checkForEnd();
+            if (userDead === deadCells[currentDeadCellIndex]) {
+                deadCellsCheck.style.backgroundColor = "green";
+                deadCellsCheck.innerText = "Correct!";
+                deadCellGuess = true;
+                displayCurrentCell();
+            } else {
+                deadCellsCheck.style.backgroundColor = "red";
+                deadCellsCheck.innerText = "Incorrect!";
+            }
+            //nextScreen();
+        }
+
+
+        function calcViability() {
+            let total = liveCells[currentLiveCellIndex] + deadCells[currentDeadCellIndex];
+            let cellViability = (liveCells[currentLiveCellIndex] / total) * 100;
+            let roundedCellViability = Math.round(cellViability)
+
+            const userViability = parseInt(document.getElementById("cellViability").value);
+            //checkForEnd();
+            if (userViability === roundedCellViability) {
+                cellViabilityCheck.style.backgroundColor = "green";
+                cellViabilityCheck.innerText = "Correct!";
+                cellViabilityGuess = true;
+                displayCurrentCell();
+            } else {
+                cellViabilityCheck.style.backgroundColor = "red";
+                cellViabilityCheck.innerText = "Incorrect!";
+            }
+            //nextScreen();
+        }
+
+        function calcDensity() {
+            let total = liveCells[currentLiveCellIndex] + deadCells[currentDeadCellIndex];
+            let actualCellDensity = (total / 5) * 4 * 10 * 10 * 10 * 10;
+
+            const userDensity = parseFloat(document.getElementById("cellDensity").value);
+            //checkForEnd();
+            if (userDensity === actualCellDensity) {
+                cellDensityCheck.style.backgroundColor = "green";
+                cellDensityCheck.innerText = "Correct!";
+                cellDensityGuess = true;
+                displayCurrentCell();
+            } else {
+                cellDensityCheck.style.backgroundColor = "red";
+                cellDensityCheck.innerText = "Incorrect!";
+            }
+            //nextScreen();
+        }
+
+
+        function nextScreen() {
+            if (liveCellGuess && deadCellGuess && cellViabilityGuess && cellDensityGuess) {
+                currentAnswerIndex++;
+                liveCellGuess = false;
+                document.getElementById("calcLive").value = "";
+                deadCellGuess = false;
+                document.getElementById("calcDead").value = "";
+                cellViabilityGuess = false;
+                document.getElementById("cellViability").value = "";
+                cellDensityGuess = false;
+                document.getElementById("cellDensity").value = "";
+        
+        // Check if all questions are answered
+            if (currentAnswerIndex === liveCells.length && currentAnswerIndex === deadCells.length) {
+            // Redirect to 'done.html' when all questions are answered
+                window.location.href = 'done.html';
+            } 
+            else {
+                currentLiveCellIndex++;
+                currentDeadCellIndex++;
+                currentImageIndex++;
+                currentQuestionNumber++;
+                updateQuestionHeading();
+                displayCurrentCell(); // Update the image
+            }
+
+        resetButton(liveCellsCheck); // Reset liveCellsCheck
+        resetButton(deadCellsCheck); // Reset deadCellsCheck
+        resetButton(cellViabilityCheck); // Reset cellViabilityCheck
+        resetButton(cellDensityCheck); // Reset cellDensityCheck
+        }
+    }
+
+    function resetButton(button) {
+    setTimeout(function () {
+        button.style.backgroundColor = "#a2cffe";
+        button.innerText = "Check Answer";
+    }, 50); // You can adjust the delay (in milliseconds) as needed
+    }
+    </script>
+        <div id="back-to-main-button-container">
+            <a href="index.html">
+                <button>Back to main menu</button>
+            </a>
+        </div>  
+        <div id="next-button-container">
+            <button id="nextScreenCheck" onclick="nextScreen()">Next</button>
+        </div>  
+</body>
+</html>

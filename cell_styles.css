@@ -1,0 +1,66 @@
+/* Apply a pale baby pink background color to the body */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffd9e3; /* You can adjust the color code as needed */
+    text-align: center; /* Center-align text */
+}
+
+/* Style the <p> elements */
+p {
+    font-size: 24px; /* Increase font size */
+    font-weight: bold; /* Make the text bold */
+}
+
+/* Style the input field */
+input[type="number"] {
+    width: 100px; /* Adjust the width of the input field */
+    padding: 10px; /* Add padding for better appearance */
+    font-size: 18px; /* Increase font size */
+}
+
+/* Style the button */
+button {
+    background-color: #a2cffe; /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 18px; /* Increase font size */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Style the container div */
+#cellContainer p {
+    text-align: center; /* Center-align text in the container */
+    margin: 0; /* Add some top margin to the container */
+}
+
+/* Style the images */
+img#cellImage {
+    display: block; /* Make the image a block element for centering */
+    margin: 20px auto; /* 20px margin on top and bottom, centered horizontally */
+    max-width: 100%; /* Ensure images don't exceed their container */
+    height: auto; /* Maintain aspect ratio for images */
+    width: 700px; /* Set a specific width for all images (adjust as needed) */
+    max-height: 700px; /* Set a specific max height for all images (adjust as needed) */
+}
+
+#back-to-main-button-container {
+    position: fixed; /* Position is fixed, so it stays in place when you scroll */
+    bottom: 10px; /* Adjust this value to control the vertical position */
+    left: 10px; /* Adjust this value to control the horizontal position */
+}
+
+#next-button-container {
+    position: fixed; /*Position is fixed, so it stays in place when you scroll */
+    bottom: 10px; /* Adjust this value to control the vertical position */
+    right: 10px; /* Adjust this value to control the horizontal position */
+}
+
+
+
