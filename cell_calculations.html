@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Calculations Practice</title>
-    <link rel="stylesheet" type="text/css" href="cell_styles.css">
-</head>
+    <head>
+        <title>Calculations Practice</title>
+        <link rel="stylesheet" type="text/css" href="cell_styles.css">
+    </head>
+
 <body>
     <h2 id="question-heading">Question 1</h2>
+    <div id="question-container">
     <img id="cellImage" alt="Cell Image">
     <p>Number of Live Cells: </p>
     <input type="number" id="calcLive">
@@ -19,6 +21,8 @@
     <p>Cell Density (cells/mL): </p>
     <input type="number" id="cellDensity">
     <button id="cellDensityCheck" onclick="calcDensity()">Check Answer</button>
+
+</div>
 
     <script>
         let currentQuestionNumber = 1;
@@ -51,7 +55,7 @@
             { image: 'images/image13.png', count: 13 },
             { image: 'images/image14.png', count: 14 },
             { image: 'images/image15.png', count: 15 },
-            // Add more image-count pairs as needed
+            
     ];
 
     function updateQuestionHeading(){
@@ -142,8 +146,7 @@
 
         function nextScreen() {
             if (liveCellGuess && deadCellGuess && cellViabilityGuess && cellDensityGuess) {
-                currentAnswerIndex++; //check if all blanks are filled
-                //reset all inputs
+                currentAnswerIndex++; 
                 liveCellGuess = false;
                 document.getElementById("calcLive").value = ""; 
                 deadCellGuess = false;
@@ -153,9 +156,7 @@
                 cellDensityGuess = false;
                 document.getElementById("cellDensity").value = "";
         
-        // Check if all questions are answered
             if (currentAnswerIndex === liveCells.length && currentAnswerIndex === deadCells.length) {
-            // Redirect to 'done.html' when all questions are answered
                 window.location.href = 'done.html';
             } 
             else {
@@ -164,13 +165,13 @@
                 currentImageIndex++;
                 currentQuestionNumber++;
                 updateQuestionHeading();
-                displayCurrentCell(); // Update the image
+                displayCurrentCell(); 
             }
 
-        resetButton(liveCellsCheck); // Reset liveCellsCheck
-        resetButton(deadCellsCheck); // Reset deadCellsCheck
-        resetButton(cellViabilityCheck); // Reset cellViabilityCheck
-        resetButton(cellDensityCheck); // Reset cellDensityCheck
+        resetButton(liveCellsCheck); 
+        resetButton(deadCellsCheck); 
+        resetButton(cellViabilityCheck); 
+        resetButton(cellDensityCheck); 
         }
     }
 
@@ -178,7 +179,7 @@
     setTimeout(function () {
         button.style.backgroundColor = "#a2cffe";
         button.innerText = "Check Answer";
-    }, 50); // to adjust delay
+    }, 50); 
     }
     </script>
         <div id="back-to-main-button-container">

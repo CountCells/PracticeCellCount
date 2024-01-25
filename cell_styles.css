@@ -1,8 +1,7 @@
-/* Apply pink background color to body */
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 3px;
     box-sizing: border-box;
 }
 
@@ -13,9 +12,10 @@ body {
 
 /* Style <p> elements */
 p {
-    font-size: 24px; 
+    font-size: 30px; 
     font-weight: bold; 
 }
+
 
 /* Style input field */
 input[type="number"] {
@@ -34,32 +34,43 @@ button {
     cursor: pointer; 
 }
 
-/* Style container div */
-#cellContainer p {
-    text-align: center; 
-    margin: 0; /* top margin*/
+/*#cellContainer p {
+    text-align: right; 
+    margin: 0; /* top margin
+} */
+
+/*Align list of questions*/
+#questions-container {
+    text-align: right; 
+    margin: 10px 20px; 
 }
 
-/* Style the images */
+/*Space between questions*/
+#questions-container p {
+    margin: 10px 0; 
+}
+
+/*Styling the image*/
 img#cellImage {
-    display: block; /* Make image a block element for centering */
-    margin: 20px auto; 
-    max-width: 100%; /* Inages cannot exceed container */
-    height: auto; /* Maintain aspect ratio for images */
-    width: 700px; 
-    max-height: 700px; 
+    float: left;
+    margin: 20px 0; 
+    width: 50%; 
+    max-width: 600px; 
+    height: auto; 
+    max-height: 600px; 
 }
 
+/*style both buttons*/
 #back-to-main-button-container {
-    position: fixed; /* Position is fixed, stays in place when scrolled */
-    bottom: 10px; /* Control the vertical position */
-    left: 10px; /* Control the horizontal position */
+    position: fixed; 
+    bottom: 5px; 
+    left: 10px; 
 }
 
 #next-button-container {
-    position: fixed; /*Position is fixed, stays in place when scrolled */
-    bottom: 10px; /* Control the vertical position */
-    right: 10px; /* Control the horizontal position */
+    position: fixed; 
+    bottom: 10px; 
+    right: 10px; 
 }
 
 

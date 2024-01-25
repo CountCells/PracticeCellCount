@@ -1,31 +1,31 @@
-/* Apply blue background color to the body*/
+
 body {
     background-color: #a2cffe; 
-    text-align: center; /* Center-align text */
+    text-align: center; 
     font-size: 24px; 
 }
 
 /* Style the <h1> elements */
 h1 {
-    font-size: 36px; /*Heading font size*/
-    margin: 20px 0; /* Margin to top and bottom of headings */
-    text-align: center; /* Center-align text */
+    font-size: 36px; 
+    margin: 20px 0; 
+    text-align: center; 
 }
 
 /* Style buttons */
 button {
     background-color: #ffd9e3; 
-    color: #000; /* For text */
+    color: #000; 
     padding: 15px 30px; 
     font-size: 24px; 
     border: none; 
-    cursor: pointer; /* Change cursor when you hover */
-    margin: 10px; /*Margin around the buttons */
+    cursor: pointer; 
+    margin: 10px; 
 }
 
 /* Style hyperlink */
 p a {
-    text-decoration: none; /* Remove underline*/
-    color: #810c5e; /*Hyperlink colour*/
+    text-decoration: none; 
+    color: #810c5e; 
     font-size: 24px; 
 }
